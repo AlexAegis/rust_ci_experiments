@@ -42,7 +42,9 @@ jobs:
       - name: cache
         uses: Swatinem/rust-cache@v2
       - name: install cargo-make
-        run: cargo install cargo-make
+        uses: davidB/rust-cargo-make@v1
+        with:
+          version: "latest"
       - name: install alsa and udev (linux)
         if: runner.os == 'linux'
         run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
@@ -70,7 +72,9 @@ jobs:
       - name: cache
         uses: Swatinem/rust-cache@v2
       - name: install cargo-make
-        run: cargo install cargo-make
+        uses: davidB/rust-cargo-make@v1
+        with:
+          version: "latest"
       - name: install alsa and udev (linux)
         run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
       - name: check format and clippy
@@ -103,7 +107,9 @@ jobs:
       - name: cache
         uses: Swatinem/rust-cache@v2
       - name: install cargo-make
-        run: cargo install cargo-make
+        uses: davidB/rust-cargo-make@v1
+        with:
+          version: "latest"
       - name: build book
         run: cargo make book-build
       - name: setup pages
@@ -139,6 +145,8 @@ jobs:
       github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     needs: [test, lint]
+    environment:
+      name: crates-io
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -155,7 +163,9 @@ jobs:
       - name: cache
         uses: Swatinem/rust-cache@v2
       - name: install cargo-make
-        run: cargo install cargo-make
+        uses: davidB/rust-cargo-make@v1
+        with:
+          version: "latest"
       - name: install alsa and udev (linux)
         if: runner.os == 'linux'
         run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev

@@ -1,3 +1,3 @@
-# Examples
+# experimental_do_nothing_crate_please_look_away
 
-Stuff for examples, not used in the crates themselves.
+Test crate for some ci stuff, will be deleted

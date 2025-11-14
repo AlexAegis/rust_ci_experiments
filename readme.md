@@ -1,6 +1,6 @@
 # rust_ci_experiments
 
-[![crates.io](https://img.shields.io/crates/v/rust_ci_experiments.svg)](https://crates.io/crates/rust_ci_experiments)
+[![crates.io](https://img.shields.io/crates/v/experimental_do_nothing_crate_please_look_away.svg)](https://crates.io/crates/experimental_do_nothing_crate_please_look_away)
 [![ci](https://github.com/AlexAegis/rust_ci_experiments/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexAegis/rust_ci_experiments/actions/workflows/ci.yml)
 
 ## Usage
