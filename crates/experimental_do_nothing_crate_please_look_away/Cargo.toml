@@ -1,0 +1,21 @@
+[package]
+name = "experimental_do_nothing_crate_please_look_away"
+version = "0.1.0"
+description = "helo"
+publish = false
+
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+documentation.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+default = ["dev"]
+dev = []
+
+[dependencies]

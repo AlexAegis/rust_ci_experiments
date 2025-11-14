@@ -1,0 +1,38 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+edition = "2024"
+homepage = "https://github.com/AlexAegis/rust_ci_experiments"
+repository = "https://github.com/AlexAegis/rust_ci_experiments"
+documentation = "https://github.com/AlexAegis/rust_ci_experiments"
+authors = ["alexaegis"]
+license = "MIT"
+readme = "readme.md"
+publish = false
+
+[workspace.lints.clippy]
+type_complexity = "allow"
+
+# Enable a small amount of optimization and disable debug info for faster builds
+[profile.dev]
+opt-level = 1
+incremental = true
+debug = 0
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.test]
+incremental = true
+
+[profile.release]
+incremental = true
+debug = 0
+
+[workspace.dependencies]
+# Workspace Crates
+# Misc
+experimental_do_nothing_crate_please_look_away = { path = "crates/experimental_do_nothing_crate_please_look_away" }

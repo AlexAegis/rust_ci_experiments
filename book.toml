@@ -1,0 +1,18 @@
+# https://rust-lang.github.io/mdBook/format/configuration/general.html
+
+[book]
+title = "rust_ci_experiments"
+authors = ["AlexAegis"]
+description = "Usage and development documentation of rust_ci_experiments."
+src = "docs"
+
+[build]
+build-dir = "target/book"
+create-missing = true
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html]
+additional-js = ["docs/assets/mermaid.min.js", "docs/mermaid-init.js"]
+git-repository-url = "https://github.com/AlexAegis/rust_ci_experiments"
